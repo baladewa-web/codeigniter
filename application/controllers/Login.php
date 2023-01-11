@@ -33,7 +33,7 @@ Class Login extends CI_Controller {
 
             $this->session->set_userdata($data_session);
 
-            redirect(base_url("dashboard"));
+            redirect(base_url("dashboard/index"));
        }else{
         $this->session->set_flashdata('error_login', 'username atau password salah !!');
         redirect(base_url('login'));
