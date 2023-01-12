@@ -17,18 +17,25 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pages</span>
             </li>
+            
             <!-- MENU -->
-            <li class="menu-item <?= $this->uri->segment(2) == 'list' ? 'active' : '' ?>">
-              <a href="<?php echo site_url('page/list') ?>" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-file"></i>
-                <div data-i18n="Analytics">List Data</div>
+            <li class="menu-item <?= $this->uri->segment(1) == 'page' ? 'open active' : '' ?>">
+              <a href="javascript:void(0)" class="menu-link menu-toggle ">
+              <i class="menu-icon tf-icons bx bxs-file"></i>
+                <div data-i18n="Extended UI">Data</div>
               </a>
-            </li>
-            <li class="menu-item <?= $this->uri->segment(2) == 'create' ? 'active' : '' ?>">
-              <a href="<?php echo site_url('page/create') ?>" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-file-plus"></i>
-                <div data-i18n="Analytics">Create Data</div>
-              </a>
+              <ul class="menu-sub">
+                <li class="menu-item <?= $this->uri->segment(2) == 'list' ? 'active' : '' ?>">
+                  <a href="<?php echo site_url('page/list') ?>" class="menu-link">
+                    <div data-i18n="Perfect Scrollbar">List Data</div>
+                  </a>
+                </li>
+                <li class="menu-item <?= $this->uri->segment(2) == 'create' ? 'active' : '' ?>">
+                  <a href="<?php echo site_url('page/create') ?>" class="menu-link">
+                    <div data-i18n="Text Divider">Create Data</div>
+                  </a>
+                </li>
+              </ul>
             </li>
             <!-- Account -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Account</span></li>
@@ -54,7 +61,7 @@
             </li>
 
             <li class="menu-item">
-              <a href="icons-boxicons.html" class="menu-link">
+              <a href="#" class="menu-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
                 <i class="menu-icon tf-icons bx bx-power-off"></i>
                 <div data-i18n="Boxicons">Log Out</div>
               </a>

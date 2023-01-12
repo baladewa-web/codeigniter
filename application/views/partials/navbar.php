@@ -55,7 +55,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="<?php echo base_url('login/logout') ?>">
+                      <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
