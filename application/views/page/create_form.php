@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Create Data</title>
     <?php $this->load->view('/partials/head') ?>
   </head>
 

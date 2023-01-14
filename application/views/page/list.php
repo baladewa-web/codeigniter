@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Data</title>
     <?php $this->load->view('/partials/head') ?>
   </head>
 
@@ -26,30 +30,42 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="row">
-                <div class="col-lg-8 mb-4 order-0">
+                <div class="col-lg-12 mb-4 order-0">
                   <div class="card">
                     <div class="d-flex align-items-end row">
-                      <div class="col-sm-7">
-                        <div class="card-body">
-                          <h5 class="card-title text-primary">List Page 🎉</h5>
-                          <p class="mb-4">
-                            You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                            your profile.
-                          </p>
-
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
-                        </div>
+                      <div class="card-header">
+                        <h5 class="card-title text-primary">List Data</h5>
                       </div>
-                      <div class="col-sm-5 text-center text-sm-left">
-                        <div class="card-body pb-0 px-0 px-md-4">
-                          <img
-                            src="../assets/img/illustrations/man-with-laptop-light.png"
-                            height="140"
-                            alt="View Badge User"
-                            data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                            data-app-light-img="illustrations/man-with-laptop-light.png"
-                          />
-                        </div>
+                      <div class="card-body">
+                        <table class="table table-striped table-hover">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Usulan</th>
+                              <th>RT</th>
+                              <th>RW</th>
+                              <th>Jumlah</th>
+                              <th>Satuan</th>
+                              <th>Pagu</th>
+                              <th>Realisasi</th>
+                              <th>Sisa</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>asdf</td>
+                              <td>sdf</td>
+                              <td>asdf</td>
+                              <td>asdf</td>
+                              <td>asdf</td>
+                              <td>afd</td>
+                              <td>asdf</td>
+                              <td>asdf</td>
+                            </tr>
+                          </tbody>
+                          
+                        </table>
                       </div>
                     </div>
                   </div>
