@@ -66,34 +66,28 @@
                                 <th>Satuan</th>
                                 <th>Pagu</th>
                                 <th>Realisasi</th>
-                                <th>Aksi</th>
+                                <th class="text-center">Aksi</th>
                               </tr>
                             </thead>
                             <tbody>
+                              <?php foreach($usulan as $item) : ?>
                               <tr>
                                 <td>1</td>
-                                <td>asdf</td>
-                                <td>sdf</td>
-                                <td>asdf</td>
-                                <td>asdf</td>
-                                <td>asdf</td>
-                                <td>afd</td>
-                                <td>asdf</td>
-                                <td>asdf</td>
+                                <td><?php echo $item->usulan ?></td>
+                                <td><?php echo $item->rt ?></td>
+                                <td><?php echo $item->rw ?></td>
+                                <td><?php echo $item->jumlah ?></td>
+                                <td><?php echo $item->satuan ?></td>
+                                <td><?php echo $item->pagu ?></td>
+                                <td><?php echo $item->realisasi ?></td>
+                                <td class="text-center">
+                                  <a href="#" class="btn btn-outline-light text-info p-1"><i class='bx bx-sm bx-detail'></i></a>
+                                  <a href="#" class="btn btn-outline-light text-success p-1"><i class='bx bx-sm bx-edit'></i></a>
+                                  <a href="#" class="btn btn-outline-light text-danger p-1"><i class='bx bx-sm bx-trash'></i></a>
+                                </td>
                               </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>asdf</td>
-                                <td>sdf</td>
-                                <td>asdf</td>
-                                <td>asdf</td>
-                                <td>asdf</td>
-                                <td>afd</td>
-                                <td>asdf</td>
-                                <td>asdf</td>
-                              </tr>
+                              <?php endforeach; ?>
                             </tbody>
-                            
                           </table>
                         </div>
                       </div>
