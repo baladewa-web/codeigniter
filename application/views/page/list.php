@@ -32,42 +32,71 @@
               <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
                   <div class="card">
-                    <div class="d-flex align-items-end row">
                       <div class="card-header">
                         <h5 class="card-title text-primary">List Data</h5>
                       </div>
                       <div class="card-body">
-                        <table class="table table-striped table-hover">
-                          <thead>
-                            <tr>
-                              <th>No</th>
-                              <th>Usulan</th>
-                              <th>RT</th>
-                              <th>RW</th>
-                              <th>Jumlah</th>
-                              <th>Satuan</th>
-                              <th>Pagu</th>
-                              <th>Realisasi</th>
-                              <th>Sisa</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td>asdf</td>
-                              <td>sdf</td>
-                              <td>asdf</td>
-                              <td>asdf</td>
-                              <td>asdf</td>
-                              <td>afd</td>
-                              <td>asdf</td>
-                              <td>asdf</td>
-                            </tr>
-                          </tbody>
-                          
-                        </table>
+                        <form action="post" class="mb-3 bg-light">
+                          <div class="row">
+                            <div class="col-md-2">
+                              <select name="" id="" class="form-select">
+                                <option selected disabled>Pilih Kategori</option>
+                                <option value="usulan">Usulan</option>
+                                <option value="pagu">Pagu</option>
+                                <option value="tahun">Tahun</option>
+                              </select>
+                            </div>
+                            <div class="col-md-2">
+                              <input type="text" class="form-control" name="" placeholder="cari">
+                            </div>
+                            <div class="col-md-1">
+                              <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
+                            </div>
+                          </div>
+                        </form> 
+                        <div class="table-responsive">
+                          <table class="table table-striped table-hover" id="table-list">
+                            <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>Usulan</th>
+                                <th>RT</th>
+                                <th>RW</th>
+                                <th>Jumlah</th>
+                                <th>Satuan</th>
+                                <th>Pagu</th>
+                                <th>Realisasi</th>
+                                <th>Aksi</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>asdf</td>
+                                <td>sdf</td>
+                                <td>asdf</td>
+                                <td>asdf</td>
+                                <td>asdf</td>
+                                <td>afd</td>
+                                <td>asdf</td>
+                                <td>asdf</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>asdf</td>
+                                <td>sdf</td>
+                                <td>asdf</td>
+                                <td>asdf</td>
+                                <td>asdf</td>
+                                <td>afd</td>
+                                <td>asdf</td>
+                                <td>asdf</td>
+                              </tr>
+                            </tbody>
+                            
+                          </table>
+                        </div>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -93,7 +122,7 @@
     <!-- Modal -->
     <?php //$this->load->view('/partials/modal') ?>
 
-
+    
     <!-- Core JS -->
     <?php $this->load->view('/partials/script') ?>
 </body>

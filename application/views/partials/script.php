@@ -33,7 +33,7 @@
 <script src="<?php echo base_url() ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="<?php echo base_url() ?>assets/vendor/js/menu.js"></script>
 
-<!-- Data Tables -->
+<!-- DataTables -->
 <script src="<?php echo base_url()?>assets/vendor/libs/jquery/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url()?>assets/vendor/js/dataTables.min.js"></script>
 

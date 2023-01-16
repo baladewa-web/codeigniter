@@ -3,7 +3,11 @@
 Class Page Extends CI_Controller{
     function __construct(){
         parent::__construct();
-        //$this->load->model('page_model');
+        //$this->load->model('page_model'); 
+
+        if($this->session->userdata('status') != "login"){
+            redirect(base_url("login")); 
+        }
     }
 
     public function list(){

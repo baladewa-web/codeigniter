@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/demo.css" />
 
+    <!-- Datatables -->
+    <link rel="stylesheet" href="<?php //echo base_url(); ?>assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/script-dataTables.js">
+
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
