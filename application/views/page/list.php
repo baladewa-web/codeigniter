@@ -52,6 +52,12 @@
                             <div class="col-md-1">
                               <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
                             </div>
+                            <div class="col-md-5">
+
+                            </div>
+                            <div class="col-md-2 justify-content-md-end">
+                              <a href="<?php echo site_url('page/create') ?>" class="btn btn-primary"><i class='bx bx-list-plus bx-sm'></i> Tambah</a>
+                            </div>
                           </div>
                         </form> 
                         <div class="table-responsive">
@@ -70,18 +76,23 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <?php foreach($usulan as $item) : ?>
+                              <?php 
+                                $i=1;
+                                foreach($usulan as $data) : 
+                              ?>
                               <tr>
-                                <td>1</td>
-                                <td><?php echo $item->usulan ?></td>
-                                <td><?php echo $item->rt ?></td>
-                                <td><?php echo $item->rw ?></td>
-                                <td><?php echo $item->jumlah ?></td>
-                                <td><?php echo $item->satuan ?></td>
-                                <td><?php echo $item->pagu ?></td>
-                                <td><?php echo $item->realisasi ?></td>
+                                <td><?php echo $i++ ?></td>
+                                <td><?php echo $data->usulan ?></td>
+                                <td><?php echo $data->rt ?></td>
+                                <td><?php echo $data->rw ?></td>
+                                <td><?php echo $data->jumlah ?></td>
+                                <td><?php echo $data->satuan ?></td>
+                                <td><?php echo $data->pagu ?></td>
+                                <td><?php echo $data->realisasi ?></td>
                                 <td class="text-center">
-                                  <a href="#" class="btn btn-outline-light text-info p-1"><i class='bx bx-sm bx-detail'></i></a>
+                                  <a href="" class="btn btn-outline-light text-info p-1">
+                                    <i class='bx bx-sm bx-detail'></i>
+                                  </a>
                                   <a href="#" class="btn btn-outline-light text-success p-1"><i class='bx bx-sm bx-edit'></i></a>
                                   <a href="#" class="btn btn-outline-light text-danger p-1"><i class='bx bx-sm bx-trash'></i></a>
                                 </td>
@@ -94,6 +105,8 @@
                   </div>
                 </div>
               </div>
+              
+              
             </div>
             <!-- / Content -->
 
