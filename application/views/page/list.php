@@ -32,32 +32,30 @@
               <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
                   <div class="card">
-                      <div class="card-header">
-                        <h5 class="card-title text-primary">List Data</h5>
+                      <div class="card-header d-flex justify-content-between">
+                        <h5 class="card-title text-primary"><i class='bx bx-sm bx-file text-primary'></i> List Data</h5>
+                        <a href="<?php echo site_url('page/create') ?>" class="btn btn-primary"><i class='bx bx-list-plus bx-sm'></i> Tambah Data</a>
                       </div>
                       <div class="card-body">
                         <form action="post" class="mb-3 bg-light">
-                          <div class="row">
-                            <div class="col-md-2">
-                              <select name="" id="" class="form-select">
-                                <option selected disabled>Pilih Kategori</option>
-                                <option value="usulan">Usulan</option>
-                                <option value="pagu">Pagu</option>
-                                <option value="tahun">Tahun</option>
-                              </select>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="row">
+                              <div class="col-md-5 mb-3">
+                                <select name="" id="" class="form-select">
+                                  <option selected disabled>Pilih Kategori</option>
+                                  <option value="usulan">Usulan</option>
+                                  <option value="pagu">Pagu</option>
+                                  <option value="tahun">Tahun</option>
+                                </select>
+                              </div>
+                              <div class="col-md-5 mb-3">
+                                <input type="text" class="form-control" name="" placeholder="cari">
+                              </div>
+                              <div class="col-md-2 mb-3">
+                                <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
+                              </div>
                             </div>
-                            <div class="col-md-2">
-                              <input type="text" class="form-control" name="" placeholder="cari">
-                            </div>
-                            <div class="col-md-1">
-                              <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
-                            </div>
-                            <div class="col-md-5">
-
-                            </div>
-                            <div class="col-md-2 justify-content-md-end">
-                              <a href="<?php echo site_url('page/create') ?>" class="btn btn-primary"><i class='bx bx-list-plus bx-sm'></i> Tambah</a>
-                            </div>
+                            
                           </div>
                         </form> 
                         <div class="table-responsive">
@@ -78,17 +76,17 @@
                             <tbody>
                               <?php 
                                 $i=1;
-                                foreach($usulan as $data) : 
+                                foreach($usulan as $item) : 
                               ?>
                               <tr>
                                 <td><?php echo $i++ ?></td>
-                                <td><?php echo $data->usulan ?></td>
-                                <td><?php echo $data->rt ?></td>
-                                <td><?php echo $data->rw ?></td>
-                                <td><?php echo $data->jumlah ?></td>
-                                <td><?php echo $data->satuan ?></td>
-                                <td><?php echo $data->pagu ?></td>
-                                <td><?php echo $data->realisasi ?></td>
+                                <td><?php echo $item->usulan ?></td>
+                                <td><?php echo $item->rt ?></td>
+                                <td><?php echo $item->rw ?></td>
+                                <td><?php echo $item->jumlah ?></td>
+                                <td><?php echo $item->satuan ?></td>
+                                <td><?php echo $item->pagu ?></td>
+                                <td><?php echo $item->realisasi ?></td>
                                 <td class="text-center">
                                   <a href="" class="btn btn-outline-light text-info p-1">
                                     <i class='bx bx-sm bx-detail'></i>

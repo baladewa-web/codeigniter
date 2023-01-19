@@ -18,6 +18,13 @@ Class Page Extends CI_Controller{
     public function create(){
         $this->load->view('/page/create_form');
     }
+
+    public function store(){
+        $item = new page_model;
+        $item = add();
+
+        redirect(base_url('list'));
+    }
 }
 
 ?>
