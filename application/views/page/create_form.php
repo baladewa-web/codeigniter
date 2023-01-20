@@ -34,23 +34,30 @@
                       <small class="text-muted float-end">Tambah data dalam database</small>
                     </div>
                     <div class="card-body">
-                      <form method="post" action="<?php echo base_url('page/store'); ?>">
+                      <!-- <form method="post" action="<?php //echo base_url('page/create'); ?>"> -->
+                      <?php 
+                        $attributes = array('id' => 'formadd', 'method' => "post", "autocomplete" => "off");
+                        echo form_open('', $attributes);
+                      ?>
                       <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="tahun">Tahun</label>
                           <div class="col-sm-5">
                             <div class="input-group input-group-merge">
-                              <span id="usulan" class="input-group-text">
+                              <span id="Tahun" class="input-group-text">
                               <i class='bx bx-calendar' ></i>
                               </span>
                               <input
-                                type="month"
+                                type="number"
                                 name="tahun"
                                 class="form-control"
-                                id="basic-icon-default-fullname"
+                                id="Tahun"
                                 placeholder="YYYY"
                                 aria-label="Perbaikan selokan"
                                 aria-describedby="basic-icon-default-fullname2"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Tahun') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -58,7 +65,7 @@
                           <label class="col-sm-2 col-form-label" for="usulan">Usulan</label>
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
-                              <span id="usulan" class="input-group-text">
+                              <span id="Usulan" class="input-group-text">
                               <i class='bx bx-buildings'></i>
                               </span>
                               <input
@@ -70,6 +77,9 @@
                                 aria-label="Perbaikan selokan"
                                 aria-describedby="basic-icon-default-fullname2"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Usulan') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -83,12 +93,15 @@
                               <input
                                 type="number"
                                 name="rt"
-                                id="rt"
+                                id="Rt"
                                 class="form-control"
                                 placeholder="1"
                                 aria-label="Rt"
                                 aria-describedby="basic-icon-default-company2"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Rt') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -100,12 +113,15 @@
                               <input
                                 type="number"
                                 name="rw"
-                                id="rw"
+                                id="Rw"
                                 class="form-control"
                                 placeholder="3"
                                 aria-label="Rw"
                                 aria-describedby="rw"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Rw') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -117,12 +133,15 @@
                               <input
                                 type="number"
                                 name="jumlah"
-                                id="jumlah"
+                                id="Jumlah"
                                 class="form-control"
                                 placeholder="3"
                                 aria-label="Jumlah"
                                 aria-describedby="jumlah"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Jumlah') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -134,12 +153,15 @@
                               <input
                                 type="text"
                                 name="satuan"
-                                id="satuan"
+                                id="Satuan"
                                 class="form-control"
                                 placeholder="paket"
                                 aria-label="Satuan"
                                 aria-describedby="satuan"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Satuan') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -151,12 +173,15 @@
                               <input
                                 type="number"
                                 name="pagu"
-                                id="pagu"
+                                id="Pagu"
                                 class="form-control"
                                 placeholder="10.000.000"
                                 aria-label="Pagu"
                                 aria-describedby="pagu"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Pagu') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -168,12 +193,15 @@
                               <input
                                 type="number"
                                 name="realisasi"
-                                id="realisasi"
+                                id="Realisasi"
                                 class="form-control"
                                 placeholder="9.000.000"
                                 aria-label="Realisasi"
                                 aria-describedby="realisasi"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Realisasi') ?>
+                              </small>
                             </div>
                           </div>
                         </div>
@@ -185,12 +213,15 @@
                               <input
                                 type="number"
                                 name="sisa"
-                                id="sisa"
+                                id="Sisa"
                                 class="form-control"
                                 placeholder="1.000.000"
                                 aria-label="Sisa"
                                 aria-describedby="sisa"
                               />
+                              <small class="text-danger">
+                                <?php echo form_error('Sisa') ?>
+                              </small>
                             </div>
                           </div>
                         </div>

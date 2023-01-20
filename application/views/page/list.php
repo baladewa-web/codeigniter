@@ -80,7 +80,7 @@
                               ?>
                               <tr>
                                 <td><?php echo $i++ ?></td>
-                                <td><?php echo $item->usulan ?></td>
+                                <td><?php echo $item->nama ?></td>
                                 <td><?php echo $item->rt ?></td>
                                 <td><?php echo $item->rw ?></td>
                                 <td><?php echo $item->jumlah ?></td>

@@ -4,6 +4,7 @@ Class Page Extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->model('page_model'); 
+        $this->load->library('form_validation'); 
 
         if($this->session->userdata('status') != "login"){
             redirect(base_url("login")); 
@@ -16,14 +17,17 @@ Class Page Extends CI_Controller{
     }
 
     public function create(){
-        $this->load->view('/page/create_form');
-    }
+        $usulan     = $this->page_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($usulan->rules());
 
-    public function store(){
-        $item = new page_model;
-        $item = add();
+        if($validation->run()){
+            $usulan->save();
+            $this->session->set_flashdata('create_alert', 'Berhasil menambah data');
+            redirect('page');
+        }
 
-        redirect(base_url('list'));
+        $this->load->view('page/create_form');
     }
 }
 
