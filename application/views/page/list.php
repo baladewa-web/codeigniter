@@ -37,6 +37,13 @@
                         <a href="<?php echo site_url('page/create') ?>" class="btn btn-primary"><i class='bx bx-list-plus bx-sm'></i> Tambah Data</a>
                       </div>
                       <div class="card-body">
+                      <?php if ($this->session->flashdata('create_alert')): ?>
+                          <div class="alert alert-success alert-dismissible" role="alert">
+                              <i class="fas fa-check"></i>
+                              <?php echo $this->session->flashdata('create_alert'); ?>
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      <?php endif;  ?>
                         <form action="post" class="mb-3 bg-light">
                           <div class="d-flex align-items-center justify-content-between">
                             <div class="row">

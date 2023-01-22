@@ -4,54 +4,65 @@ class Page_model extends CI_Model {
     
     private $table = 'usulan';
 
+    // public $id;
+    // public $tahun;
+    // public $nama;
+    // public $rt;
+    // public $rw;
+    // public $jumlah;
+    // public $satuan;
+    // public $pagu;
+    // public $realisasi;
+    // public $sisa;
+
     //validasi form
     public function rules(){
         return [
             [
                 'field' => 'tahun',
-                'label' => 'Tahun',
-                'rules' => 'trim|required|numeric|exact_length[4]'
+                'label' => ' ',
+                'rules' => 'required|max_length[4]'
             ],
             [
                 'field' => 'nama',
-                'label' => 'Nama',
-                'rules' => 'trim|required'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'rt',
-                'label' => 'Rt',
-                'rules' => 'trim|required|numeric|min_length[1]|max_length[6]'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'rw',
-                'label' => 'Rw',
-                'rules' => 'trim|required|numeric|min_length[1]|max_length[6]'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'jumlah',
-                'label' => 'Jumlah',
-                'rules' => 'trim|required|numeric'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'satuan',
-                'label' => 'Satuan',
-                'rules' => 'trim|required'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'pagu',
-                'label' => 'Pagu',
-                'rules' => 'trim|required|numeric'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'realisasi',
-                'label' => 'Realisasi',
-                'rules' => 'trim|required|numeric'
+                'label' => ' ',
+                'rules' => 'required'
             ],
             [
                 'field' => 'sisa',
-                'label' => 'Sisa',
-                'rules' => 'trim|required|numeric'
-            ]
+                'label' => ' ',
+                'rules' => 'required'
+            ],
         ];
     }
 
@@ -62,17 +73,31 @@ class Page_model extends CI_Model {
         return $query->result();
     }
 
+    public function getById($id){
+        return $this->db->get_where($this->table, ["id" => $id])->row();
+    }
+
     public function save(){
+        // $post = $this->input->post();
+        // $this->tahun        = $post["tahun"];
+        // $this->nama         = $post["nama"];
+        // $this->rt           = $post["rt"];
+        // $this->rw           = $post["rw"];
+        // $this->jumlah       = $post["jumlah"];
+        // $this->satuan       = $post["satuan"];
+        // $this->pagu         = $post["pagu"];
+        // $this->realisasi    = $post["realisasi"];
+        // $this->sisa         = $post["sisa"];
         $data = array(
-            'tahun'     => $this->input->post('tahun'),
-            'nama'      => $this->input->post('nama'),
-            'rt'        => $this->input->post('rt'),
-            'rw'        => $this->input->post('rw'),
-            'jumlah'    => $this->input->post('jumlah'),
-            'satuan'    => $this->input->post('satuan'),
-            'pagu'      => $this->input->post('pagu'),
-            'realisai'  => $this->input->post('realisai'),
-            'sisa'      => $this->input->post('sisa')
+            "tahun"     => $this->input->post('tahun'),
+            "nama"      => $this->input->post('nama'),
+            "rt"        => $this->input->post('rt'),
+            "rw"        => $this->input->post('rw'),
+            "jumlah"    => $this->input->post('jumlah'),
+            "satuan"    => $this->input->post('satuan'),
+            "pagu"      => $this->input->post('pagu'),
+            "realisasi"  => $this->input->post('realisasi'),
+            "sisa"      => $this->input->post('sisa')
         );
 
         return $this->db->insert($this->table, $data);

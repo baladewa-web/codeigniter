@@ -34,10 +34,10 @@
                       <small class="text-muted float-end">Tambah data dalam database</small>
                     </div>
                     <div class="card-body">
-                      <!-- <form method="post" action="<?php //echo base_url('page/create'); ?>"> -->
+                      <!-- <form method="post" action="<?php //echo site_url('page/create'); ?>"> -->
                       <?php 
-                        $attributes = array('id' => 'formadd', 'method' => "post", "autocomplete" => "off");
-                        echo form_open('', $attributes);
+                        $attributes = array( 'method' => "post", "autocomplete" => "off");
+                        echo form_open('page/create', $attributes);
                       ?>
                       <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="tahun">Tahun</label>
@@ -46,19 +46,11 @@
                               <span id="Tahun" class="input-group-text">
                               <i class='bx bx-calendar' ></i>
                               </span>
-                              <input
-                                type="number"
-                                name="tahun"
-                                class="form-control"
-                                id="Tahun"
-                                placeholder="YYYY"
-                                aria-label="Perbaikan selokan"
-                                aria-describedby="basic-icon-default-fullname2"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Tahun') ?>
-                              </small>
+                              <input type="number" name="tahun" class="form-control" id="tahun" placeholder="YYYY" <?= set_value('tahun'); ?>/>
                             </div>
+                            <small class="text-danger mb-0">
+                                <?php echo form_error('tahun') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -68,19 +60,11 @@
                               <span id="Usulan" class="input-group-text">
                               <i class='bx bx-buildings'></i>
                               </span>
-                              <input
-                                type="text"
-                                name="usulan"
-                                class="form-control"
-                                id="basic-icon-default-fullname"
-                                placeholder="Perbaikan selokan"
-                                aria-label="Perbaikan selokan"
-                                aria-describedby="basic-icon-default-fullname2"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Usulan') ?>
-                              </small>
+                              <input type="text" name="nama" class="form-control" id="basic-icon-default-fullname" placeholder="Perbaikan selokan" <?= set_value('nama'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('nama') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -90,19 +74,11 @@
                               <span id="basic-icon-default-company2" class="input-group-text"
                                 ><i class='bx bx-location-plus'></i>
                               </span>
-                              <input
-                                type="number"
-                                name="rt"
-                                id="Rt"
-                                class="form-control"
-                                placeholder="1"
-                                aria-label="Rt"
-                                aria-describedby="basic-icon-default-company2"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Rt') ?>
-                              </small>
+                              <input type="number" name="rt" id="Rt" class="form-control" placeholder="1" <?= set_value('rt'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('rt') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -110,19 +86,11 @@
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <span class="input-group-text"><i class='bx bxs-location-plus' ></i></span>
-                              <input
-                                type="number"
-                                name="rw"
-                                id="Rw"
-                                class="form-control"
-                                placeholder="3"
-                                aria-label="Rw"
-                                aria-describedby="rw"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Rw') ?>
-                              </small>
+                              <input type="number" name="rw" id="Rw" class="form-control" placeholder="3" <?= set_value('rw'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('rw') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -130,19 +98,11 @@
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <span class="input-group-text"><i class='bx bx-customize'></i></span>
-                              <input
-                                type="number"
-                                name="jumlah"
-                                id="Jumlah"
-                                class="form-control"
-                                placeholder="3"
-                                aria-label="Jumlah"
-                                aria-describedby="jumlah"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Jumlah') ?>
-                              </small>
+                              <input type="number" name="jumlah" id="Jumlah" class="form-control" placeholder="3" <?= set_value('jumlah'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('jumlah') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -150,19 +110,11 @@
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <span class="input-group-text"><i class='bx bx-list-ul'></i></span>
-                              <input
-                                type="text"
-                                name="satuan"
-                                id="Satuan"
-                                class="form-control"
-                                placeholder="paket"
-                                aria-label="Satuan"
-                                aria-describedby="satuan"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Satuan') ?>
-                              </small>
+                              <input type="text" name="satuan" id="Satuan" class="form-control"  placeholder="paket" <?= set_value('stuan'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('satuan') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -170,19 +122,11 @@
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <span class="input-group-text"><i class='bx bx-wallet-alt' ></i></span>
-                              <input
-                                type="number"
-                                name="pagu"
-                                id="Pagu"
-                                class="form-control"
-                                placeholder="10.000.000"
-                                aria-label="Pagu"
-                                aria-describedby="pagu"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Pagu') ?>
-                              </small>
+                              <input type="number" name="pagu" id="Pagu" class="form-control" placeholder="10.000.000" <?= set_value('pagu'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('pagu') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -190,19 +134,11 @@
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <span class="input-group-text"><i class='bx bx-money' ></i></span>
-                              <input
-                                type="number"
-                                name="realisasi"
-                                id="Realisasi"
-                                class="form-control"
-                                placeholder="9.000.000"
-                                aria-label="Realisasi"
-                                aria-describedby="realisasi"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Realisasi') ?>
-                              </small>
+                              <input type="number" name="realisasi" id="Realisasi" class="form-control"  placeholder="9.000.000" <?= set_value('realisasi'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('realisasi') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -210,24 +146,16 @@
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <span class="input-group-text"><i class='bx bx-wallet' ></i></span>
-                              <input
-                                type="number"
-                                name="sisa"
-                                id="Sisa"
-                                class="form-control"
-                                placeholder="1.000.000"
-                                aria-label="Sisa"
-                                aria-describedby="sisa"
-                              />
-                              <small class="text-danger">
-                                <?php echo form_error('Sisa') ?>
-                              </small>
+                              <input type="number" name="sisa" id="Sisa" class="form-control" placeholder="1.000.000"<?= set_value('sisa'); ?>/>
                             </div>
+                            <small class="text-danger">
+                              <?php echo form_error('sisa') ?>
+                            </small>
                           </div>
                         </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary"><i class='bx bx-save' ></i> Simpan</button>
+                            <input type="submit" class="btn btn-primary" value="Simpan">
                           </div>
                         </div>
                       </form>

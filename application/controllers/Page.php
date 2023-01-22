@@ -24,7 +24,7 @@ Class Page Extends CI_Controller{
         if($validation->run()){
             $usulan->save();
             $this->session->set_flashdata('create_alert', 'Berhasil menambah data');
-            redirect('page');
+            redirect(base_url('page/list'));
         }
 
         $this->load->view('page/create_form');
