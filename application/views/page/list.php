@@ -38,9 +38,16 @@
                       </div>
                       <div class="card-body">
                       <?php if ($this->session->flashdata('create_alert')): ?>
-                          <div class="alert alert-success alert-dismissible" role="alert">
+                          <div class="alert alert-info alert-dismissible" role="alert">
                               <i class="fas fa-check"></i>
                               <?php echo $this->session->flashdata('create_alert'); ?>
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      <?php endif;  ?>
+                      <?php if ($this->session->flashdata('edit_alert')): ?>
+                          <div class="alert alert-success alert-dismissible" role="alert">
+                              <i class="fas fa-check"></i>
+                              <?php echo $this->session->flashdata('edit_alert'); ?>
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>
                       <?php endif;  ?>
@@ -95,11 +102,11 @@
                                 <td><?php echo $item->pagu ?></td>
                                 <td><?php echo $item->realisasi ?></td>
                                 <td class="text-center">
-                                  <a href="" class="btn btn-outline-light text-info p-1">
+                                  <a href="#" class="btn btn-outline-light text-info p-1">
                                     <i class='bx bx-sm bx-detail'></i>
                                   </a>
-                                  <a href="#" class="btn btn-outline-light text-success p-1"><i class='bx bx-sm bx-edit'></i></a>
-                                  <a href="#" class="btn btn-outline-light text-danger p-1"><i class='bx bx-sm bx-trash'></i></a>
+                                  <a href="<?php echo site_url('page/edit/'.$item->id); ?>" class="btn btn-outline-light text-success p-1"><i class='bx bx-sm bx-edit'></i></a>
+                                  <a href="<?php echo site_url('page/delete/'.$item->id); ?>" class="btn btn-outline-light text-danger p-1" onclick="return confirm('Yakin akan menghapus data?')"><i class='bx bx-sm bx-trash'></i></a>
                                 </td>
                               </tr>
                               <?php endforeach; ?>
@@ -110,8 +117,6 @@
                   </div>
                 </div>
               </div>
-              
-              
             </div>
             <!-- / Content -->
 

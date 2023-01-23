@@ -1,4 +1,3 @@
-
 <!-- LogOut Modal -->
 <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -23,7 +22,6 @@
       </div>
     </div>
 </div>
-    
 
 <!-- build:js assets/vendor/js/core.js -->
 <script src="<?php echo base_url() ?>assets/vendor/libs/jquery/jquery.js"></script>

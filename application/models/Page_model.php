@@ -4,17 +4,6 @@ class Page_model extends CI_Model {
     
     private $table = 'usulan';
 
-    // public $id;
-    // public $tahun;
-    // public $nama;
-    // public $rt;
-    // public $rw;
-    // public $jumlah;
-    // public $satuan;
-    // public $pagu;
-    // public $realisasi;
-    // public $sisa;
-
     //validasi form
     public function rules(){
         return [
@@ -78,16 +67,6 @@ class Page_model extends CI_Model {
     }
 
     public function save(){
-        // $post = $this->input->post();
-        // $this->tahun        = $post["tahun"];
-        // $this->nama         = $post["nama"];
-        // $this->rt           = $post["rt"];
-        // $this->rw           = $post["rw"];
-        // $this->jumlah       = $post["jumlah"];
-        // $this->satuan       = $post["satuan"];
-        // $this->pagu         = $post["pagu"];
-        // $this->realisasi    = $post["realisasi"];
-        // $this->sisa         = $post["sisa"];
         $data = array(
             "tahun"     => $this->input->post('tahun'),
             "nama"      => $this->input->post('nama'),
@@ -101,6 +80,27 @@ class Page_model extends CI_Model {
         );
 
         return $this->db->insert($this->table, $data);
+    }
+
+    public function update(){
+        $data = array(
+            //"id"        => $this->input->post('id'),
+            "tahun"     => $this->input->post('tahun'),
+            "nama"      => $this->input->post('nama'),
+            "rt"        => $this->input->post('rt'),
+            "rw"        => $this->input->post('rw'),
+            "jumlah"    => $this->input->post('jumlah'),
+            "satuan"    => $this->input->post('satuan'),
+            "pagu"      => $this->input->post('pagu'),
+            "realisasi"  => $this->input->post('realisasi'),
+            "sisa"      => $this->input->post('sisa')
+        );
+
+        return $this->db->update($this->table, $data, array('id' => $this->input->post('id')));
+    }
+    
+    public function delete($id){
+        return $this->db->delete($this->table, array("id" => $id));
     }
 }
 
