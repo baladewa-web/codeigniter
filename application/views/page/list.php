@@ -51,19 +51,12 @@
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>
                       <?php endif;  ?>
-                        <form action="post" class="mb-3 bg-light">
-                          <div class="d-flex align-items-center justify-content-between">
+
+                      <?php echo form_open('page/search') ?>
+                          <div class="d-flex">
                             <div class="row">
-                              <div class="col-md-5 mb-3">
-                                <select name="" id="" class="form-select">
-                                  <option selected disabled>Pilih Kategori</option>
-                                  <option value="usulan">Usulan</option>
-                                  <option value="pagu">Pagu</option>
-                                  <option value="tahun">Tahun</option>
-                                </select>
-                              </div>
-                              <div class="col-md-5 mb-3">
-                                <input type="text" class="form-control" name="" placeholder="cari">
+                              <div class="col-md-10 mb-3">
+                                <input type="text" class="form-control" name="keyword" placeholder="cari tahun / usulan">
                               </div>
                               <div class="col-md-2 mb-3">
                                 <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
@@ -71,8 +64,9 @@
                             </div>
                             
                           </div>
-                        </form> 
-                        <div class="table-responsive">
+                        <?php echo form_close() ?>
+
+                        <div class="table-responsive mt-3">
                           <table class="table table-striped table-hover" id="table-list">
                             <thead>
                               <tr>

@@ -16,6 +16,12 @@ Class Page Extends CI_Controller{
         $this->load->view('page/list', $data);
     }
 
+    public function search(){
+        $keyword        = $this->input->post('keyword',);
+        $data['usulan'] = $this->page_model->getKeyword($keyword);
+        $this->load->view('page/list', $data);
+    }
+
     public function create(){
         $usulan     = $this->page_model;
         $validation = $this->form_validation;
@@ -52,7 +58,7 @@ Class Page Extends CI_Controller{
     public function delete($id = null){
         if (!isset($id)) show_404();
 
-        if ($this->usulan_model->delete($id)){
+        if ($this->page_model->delete($id)){
             $this->session->set_flashdata('delete_alert','Berhasil menghapus data');
             redirect(site_url('page/list'));
         }

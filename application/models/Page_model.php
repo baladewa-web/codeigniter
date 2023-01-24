@@ -62,6 +62,13 @@ class Page_model extends CI_Model {
         return $query->result();
     }
 
+    public function getKeyword($keyword){
+        $this->db->from($this->table);
+        $this->db->like('tahun', $keyword);
+        $this->db->or_like('nama', $keyword);
+        return $this->db->get()->result();
+    }
+
     public function getById($id){
         return $this->db->get_where($this->table, ["id" => $id])->row();
     }
