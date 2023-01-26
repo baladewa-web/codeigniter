@@ -121,7 +121,7 @@
                           <label class="col-sm-2 col-form-label" for="pagu">pagu</label>
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
-                              <span class="input-group-text"><i class='bx bx-wallet-alt' ></i></span>
+                              <span class="input-group-text">Rp. </span>
                               <input type="number" name="pagu" id="Pagu" class="form-control" placeholder="10.000.000" <?= set_value('pagu'); ?>/>
                             </div>
                             <small class="text-danger">
@@ -133,7 +133,7 @@
                           <label class="col-sm-2 col-form-label" for="realisasi">Realisasi</label>
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
-                              <span class="input-group-text"><i class='bx bx-money' ></i></span>
+                              <span class="input-group-text">Rp. </span>
                               <input type="number" name="realisasi" id="Realisasi" class="form-control"  placeholder="9.000.000" <?= set_value('realisasi'); ?>/>
                             </div>
                             <small class="text-danger">
@@ -145,7 +145,7 @@
                           <label class="col-sm-2 col-form-label" for="sisa">Sisa</label>
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
-                              <span class="input-group-text"><i class='bx bx-wallet' ></i></span>
+                              <span class="input-group-text">Rp. </span>
                               <input type="number" name="sisa" id="Sisa" class="form-control" placeholder="1.000.000"<?= set_value('sisa'); ?>/>
                             </div>
                             <small class="text-danger">

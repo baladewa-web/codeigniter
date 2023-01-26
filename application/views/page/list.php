@@ -37,6 +37,7 @@
                         <a href="<?php echo site_url('page/create') ?>" class="btn btn-primary"><i class='bx bx-list-plus bx-sm'></i> Tambah Data</a>
                       </div>
                       <div class="card-body">
+                      <!-- Alert create data -->
                       <?php if ($this->session->flashdata('create_alert')): ?>
                           <div class="alert alert-info alert-dismissible" role="alert">
                               <i class="fas fa-check"></i>
@@ -44,10 +45,21 @@
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>
                       <?php endif;  ?>
+                      
+                      <!-- Alert edit data -->
                       <?php if ($this->session->flashdata('edit_alert')): ?>
                           <div class="alert alert-success alert-dismissible" role="alert">
                               <i class="fas fa-check"></i>
                               <?php echo $this->session->flashdata('edit_alert'); ?>
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                      <?php endif;  ?>
+
+                      <!-- Alert delete data -->
+                      <?php if ($this->session->flashdata('delete_alert')): ?>
+                          <div class="alert alert-danger alert-dismissible" role="alert">
+                              <i class="fas fa-check"></i>
+                              <?php echo $this->session->flashdata('delete_alert'); ?>
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                           </div>
                       <?php endif;  ?>
@@ -93,8 +105,8 @@
                                 <td><?php echo $item->rw ?></td>
                                 <td><?php echo $item->jumlah ?></td>
                                 <td><?php echo $item->satuan ?></td>
-                                <td><?php echo $item->pagu ?></td>
-                                <td><?php echo $item->realisasi ?></td>
+                                <td><?php echo "Rp. ". number_format($item->pagu, 0,",","."); ?></td>
+                                <td><?php echo "Rp. ". number_format($item->realisasi, 0,",","."); ?></td>
                                 <td class="text-center">
                                   <a href="#" class="btn btn-outline-light text-info p-1">
                                     <i class='bx bx-sm bx-detail'></i>
@@ -106,6 +118,7 @@
                               <?php endforeach; ?>
                             </tbody>
                           </table>
+                          <?php echo $this->pagination->create_links(); ?>
                         </div>
                       </div>
                   </div>

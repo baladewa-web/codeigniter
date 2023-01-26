@@ -56,7 +56,12 @@ class Page_model extends CI_Model {
     }
 
 
-    public function getAll(){
+    public function getCount(){
+        return $this->db->count_all($this->table);
+    }
+
+    public function getAll($limit, $start){
+        $this->db->limit($limit, $start);
         $this->db->from($this->table);
         $query = $this->db->get();
         return $query->result();
@@ -99,7 +104,7 @@ class Page_model extends CI_Model {
             "jumlah"    => $this->input->post('jumlah'),
             "satuan"    => $this->input->post('satuan'),
             "pagu"      => $this->input->post('pagu'),
-            "realisasi"  => $this->input->post('realisasi'),
+            "realisasi" => $this->input->post('realisasi'),
             "sisa"      => $this->input->post('sisa')
         );
 
