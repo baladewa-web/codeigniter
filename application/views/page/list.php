@@ -32,7 +32,7 @@
               <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
                   <div class="card">
-                      <div class="card-header d-flex justify-content-between">
+                      <div class="card-header d-flex justify-content-between p-3">
                         <h5 class="card-title text-primary"><i class='bx bx-sm bx-file text-primary'></i> List Data</h5>
                         <a href="<?php echo site_url('page/create') ?>" class="btn btn-primary"><i class='bx bx-list-plus bx-sm'></i> Tambah Data</a>
                       </div>
@@ -67,10 +67,10 @@
                       <?php echo form_open('page/search') ?>
                           <div class="d-flex">
                             <div class="row">
-                              <div class="col-md-10 mb-3">
+                              <div class="col-md-10">
                                 <input type="text" class="form-control" name="keyword" placeholder="cari tahun / usulan">
                               </div>
-                              <div class="col-md-2 mb-3">
+                              <div class="col-md-2">
                                 <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
                               </div>
                             </div>
@@ -78,7 +78,7 @@
                           </div>
                         <?php echo form_close() ?>
 
-                        <div class="table-responsive mt-3">
+                        <div class="table-responsive mt-3 mb-3">
                           <table class="table table-striped table-hover" id="table-list">
                             <thead>
                               <tr>
@@ -95,11 +95,10 @@
                             </thead>
                             <tbody>
                               <?php 
-                                $i=1;
                                 foreach($usulan as $item) : 
                               ?>
                               <tr>
-                                <td><?php echo $i++ ?></td>
+                                <td><?php echo ++$start; ?></td>
                                 <td><?php echo $item->nama ?></td>
                                 <td><?php echo $item->rt ?></td>
                                 <td><?php echo $item->rw ?></td>
@@ -118,8 +117,8 @@
                               <?php endforeach; ?>
                             </tbody>
                           </table>
-                          <?php echo $this->pagination->create_links(); ?>
                         </div>
+                          <?php echo $this->pagination->create_links(); ?>
                       </div>
                   </div>
                 </div>

@@ -56,15 +56,20 @@ class Page_model extends CI_Model {
     }
 
 
-    public function getCount(){
-        return $this->db->count_all($this->table);
+    public function getAll(){
+        return $this->db->get('usulan')->result_array();
     }
 
-    public function getAll($limit, $start){
-        $this->db->limit($limit, $start);
-        $this->db->from($this->table);
-        $query = $this->db->get();
-        return $query->result();
+    public function getAllusulan($limit, $start){
+        return $this->db->get('usulan', $limit, $start)->result();
+        // $this->db->limit($limit, $start);
+        // $this->db->from($this->table);
+        // $query = $this->db->get();
+        // return $query->result();
+    }
+
+    public function countAll(){
+        return $this->db->get('usulan')->num_rows();
     }
 
     public function getKeyword($keyword){

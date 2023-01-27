@@ -16,40 +16,47 @@ Class Page Extends CI_Controller{
 
         //config pagination
         $config['base_url']     = site_url('page/list/');
-        // $config['total_rows']   = $this->db->count_all('usulan');
-        $config['total_rows']   = $this->page_model->getCount();
-        $config['per_page']     = 10;
-        $config['uri_segment']  = 3;
-
-        $this->pagination->initialize($config);
-
-        // $page = ($this->uri->segment(3)) ?  $this->uri->segment(3) : 0;
-        
-        // $data["links"] = $this->pagination->create_links();
-
-        $data['usulan'] = $this->page_model->getAll($config["per_page"], $config["uri_segment"]);
-
-        $this->load->view('page/list', $data);
+        $config['total_rows']   = $this->page_model->countAll('usulan');
+        $config['per_page']     = 5;
+        $data['start']  = $this->uri->segment(3);
 
         //style pagination
         // $config['first_link']       = 'First';
         // $config['last_link']        = 'Last';
         // $config['next_link']        = 'Next';
         // $config['prev_link']        = 'Prev';
-        // $config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
-        // $config['full_tag_close']   = '</ul></nav></div>';
-        // $config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
-        // $config['num_tag_close']    = '</span></li>';
-        // $config['cur_tag_close']    = '<li class="page-item" active><span class="page-link">';
-        // $config['cur_tag_close']    = '</span></li>';
-        // $config['next_tag_close']   = '<li class="page-item"><span class="page-link">';
-        // $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
-        // $config['prev_tag_close']   = '<li class="page-item"><span class="page-link">';
-        // $config['prev_tagl_close']  = '</span></li>';
-        // $config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
-        // $config['first_tagl_close'] = '</span></li>';
-        // $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
-        // $config['last_tagl_close']  = '</span></li>';
+        $config['full_tag_open']    = '<nav> <ul class="pagination">';
+        $config['full_tag_close']   = '</ul></nav>';
+
+        $config['first_link']       = 'First';
+        $config['first_tag_open']   = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link']       = 'First';
+        $config['last_tag_open']   = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link']       = '&raquo';
+        $config['next_tag_open']   = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['rev_link']       = '&laquo';
+        $config['rev_tag_open']   = '<li class="page-item">';
+        $config['rev_tag_close'] = '</li>';
+
+        $config['cur_tag_open']   = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open']   = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+        
+        $this->pagination->initialize($config);
+
+        $data['usulan'] = $this->page_model->getAllusulan($config['per_page'], $data['start']);
+
+        $this->load->view('page/list', $data);
 
         // $this->pagination->initialize($config);
         // $data['pagep'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;

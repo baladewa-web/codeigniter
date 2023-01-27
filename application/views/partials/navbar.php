@@ -9,7 +9,7 @@
               <!-- tittle bar -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  <div class="fs-3 text-dark">Sistem Informasi</div>
+                  <div class="fs-4 text-dark">Sistem Informasi</div>
                 </div>
               </div>
               <!-- /tittle bar -->
@@ -18,7 +18,7 @@
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <i class='fs-1 bx bx-user-circle'></i>
+                    <i class='fs-2 bx bx-user-circle'></i>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
