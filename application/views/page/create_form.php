@@ -155,6 +155,7 @@
                         </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
+                            <a href="<?php echo site_url('page/list') ?>" class="btn btn-secondary">Cancel</a>
                             <input type="submit" class="btn btn-primary" value="Simpan">
                           </div>
                         </div>
