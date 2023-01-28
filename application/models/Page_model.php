@@ -60,7 +60,12 @@ class Page_model extends CI_Model {
         return $this->db->get('usulan')->result_array();
     }
 
-    public function getAllusulan($limit, $start){
+    public function getAllusulan($limit, $start, $keyword = null){
+        if ($keyword){
+            // $this->db->from($this->table);
+            $this->db->like('tahun', $keyword);
+            $this->db->or_like('nama', $keyword);
+        }
         return $this->db->get('usulan', $limit, $start)->result();
         // $this->db->limit($limit, $start);
         // $this->db->from($this->table);
@@ -92,7 +97,7 @@ class Page_model extends CI_Model {
             "jumlah"    => $this->input->post('jumlah'),
             "satuan"    => $this->input->post('satuan'),
             "pagu"      => $this->input->post('pagu'),
-            "realisasi"  => $this->input->post('realisasi'),
+            "realisasi" => $this->input->post('realisasi'),
             "sisa"      => $this->input->post('sisa')
         );
 

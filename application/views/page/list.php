@@ -64,33 +64,31 @@
                           </div>
                       <?php endif;  ?>
 
-                      <?php echo form_open('page/search') ?>
+                      <form action="<?= base_url('page/list'); ?>" method="post">
                           <div class="d-flex">
                             <div class="row">
                               <div class="col-md-10">
                                 <input type="text" class="form-control" name="keyword" placeholder="cari tahun / usulan">
                               </div>
                               <div class="col-md-2">
-                                <button type="submit" class="btn btn-outline-secondary"> <i class='bx bx-search-alt-2'></i> </button>
+                                <input type="submit" class="btn btn-outline-secondary" name="submit" value="Cari"> 
                               </div>
                             </div>
-                            
                           </div>
-                        <?php echo form_close() ?>
-
+                        </form>
                         <div class="table-responsive mt-3 mb-3">
                           <table class="table table-striped table-hover" id="table-list">
                             <thead>
-                              <tr>
-                                <th>No</th>
-                                <th>Usulan</th>
-                                <th>RT</th>
-                                <th>RW</th>
-                                <th>Jumlah</th>
-                                <th>Satuan</th>
-                                <th>Pagu</th>
-                                <th>Realisasi</th>
-                                <th class="text-center">Aksi</th>
+                              <tr class="table-dark text-light">
+                                <th class="text-white">No</th>
+                                <th class="text-white">Usulan</th>
+                                <th class="text-center text-white">RT</th>
+                                <th class="text-center text-white">RW</th>
+                                <th class="text-center text-white">Jumlah</th>
+                                <th class="text-white">Satuan</th>
+                                <th class="text-white">Pagu</th>
+                                <th class="text-white">Realisasi</th>
+                                <th class="text-center text-white">Aksi</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -100,24 +98,36 @@
                               <tr>
                                 <td><?php echo ++$start; ?></td>
                                 <td><?php echo $item->nama ?></td>
-                                <td><?php echo $item->rt ?></td>
-                                <td><?php echo $item->rw ?></td>
-                                <td><?php echo $item->jumlah ?></td>
+                                <td class="text-center"><?php echo $item->rt ?></td>
+                                <td class="text-center"><?php echo $item->rw ?></td>
+                                <td class="text-center"><?php echo $item->jumlah ?></td>
                                 <td><?php echo $item->satuan ?></td>
                                 <td><?php echo "Rp. ". number_format($item->pagu, 0,",","."); ?></td>
                                 <td><?php echo "Rp. ". number_format($item->realisasi, 0,",","."); ?></td>
                                 <td class="text-center">
-                                  <a href="#" class="btn btn-outline-light text-info p-1">
-                                    <i class='bx bx-sm bx-detail'></i>
-                                  </a>
-                                  <a href="<?php echo site_url('page/edit/'.$item->id); ?>" class="btn btn-outline-light text-success p-1"><i class='bx bx-sm bx-edit'></i></a>
-                                  <a href="<?php echo site_url('page/delete/'.$item->id); ?>" class="btn btn-outline-light text-danger p-1" onclick="return confirm('Yakin akan menghapus data?')"><i class='bx bx-sm bx-trash'></i></a>
+                                <div class="dropdown">
+                                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item text-info" href="<?php echo site_url('page/view/'.$item->id); ?>"
+                                      > <i class='bx bx-detail'></i> Lihat</a
+                                    >
+                                    <a class="dropdown-item text-success" href="<?php echo site_url('page/edit/'.$item->id); ?>"
+                                      ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                                    >
+                                    <a class="dropdown-item text-danger" href="<?php echo site_url('page/delete/'.$item->id); ?> " onclick="return confirm('Yakin akan menghapus data?')"
+                                      ><i class="bx bx-trash me-1"></i> Hapus</a
+                                    >
+                                  </div>
+                                </div>
                                 </td>
                               </tr>
                               <?php endforeach; ?>
                             </tbody>
                           </table>
                         </div>
+                        <span>Results : <?= $total_rows; ?></span>
                           <?php echo $this->pagination->create_links(); ?>
                       </div>
                   </div>
