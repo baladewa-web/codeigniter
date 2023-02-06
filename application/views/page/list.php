@@ -97,26 +97,26 @@
                               ?>
                               <tr>
                                 <td><?php echo ++$start; ?></td>
-                                <td><?php echo $item->nama ?></td>
-                                <td class="text-center"><?php echo $item->rt ?></td>
-                                <td class="text-center"><?php echo $item->rw ?></td>
-                                <td class="text-center"><?php echo $item->jumlah ?></td>
-                                <td><?php echo $item->satuan ?></td>
-                                <td><?php echo "Rp. ". number_format($item->pagu, 0,",","."); ?></td>
-                                <td><?php echo "Rp. ". number_format($item->realisasi, 0,",","."); ?></td>
+                                <td><?php echo $item['nama']; ?></td>
+                                <td class="text-center"><?php echo $item['rt']; ?></td>
+                                <td class="text-center"><?php echo $item['rw']; ?></td>
+                                <td class="text-center"><?php echo $item['jumlah']; ?></td>
+                                <td><?php echo $item['satuan'] ?></td>
+                                <td><?php echo "Rp. ". number_format($item['pagu'], 0,",","."); ?></td>
+                                <td><?php echo "Rp. ". number_format($item['realisasi'], 0,",","."); ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                   </button>
                                   <div class="dropdown-menu">
-                                    <a class="dropdown-item text-info" href="<?php echo site_url('page/view/'.$item->id); ?>"
+                                    <a class="dropdown-item text-info" href="<?php echo site_url('page/view/'.$item['id']); ?>"
                                       > <i class='bx bx-detail'></i> Lihat</a
                                     >
-                                    <a class="dropdown-item text-success" href="<?php echo site_url('page/edit/'.$item->id); ?>"
+                                    <a class="dropdown-item text-success" href="<?php echo site_url('page/edit/'.$item['id']); ?>"
                                       ><i class="bx bx-edit-alt me-1"></i> Edit</a
                                     >
-                                    <a class="dropdown-item text-danger" href="<?php echo site_url('page/delete/'.$item->id); ?> " onclick="return confirm('Yakin akan menghapus data?')"
+                                    <a class="dropdown-item text-danger" href="<?php echo site_url('page/delete/'.$item['id']); ?> " onclick="return confirm('Yakin akan menghapus data?')"
                                       ><i class="bx bx-trash me-1"></i> Hapus</a
                                     >
                                   </div>

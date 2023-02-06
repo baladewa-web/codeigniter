@@ -60,13 +60,13 @@ class Page_model extends CI_Model {
         return $this->db->get('usulan')->result_array();
     }
 
-    public function getAllusulan($limit, $start, $keyword = null){
+    public function getAllusulan($limit , $start, $keyword = null){
         if ($keyword){
             // $this->db->from($this->table);
             $this->db->like('tahun', $keyword);
-            $this->db->or_like('nama', $keyword);
+            // $this->db->or_like('nama', $keyword);
         }
-        return $this->db->get('usulan', $limit, $start)->result();
+        return $this->db->get('usulan', $limit, $start, $keyword)->result_array();
         // $this->db->limit($limit, $start);
         // $this->db->from($this->table);
         // $query = $this->db->get();
@@ -78,9 +78,9 @@ class Page_model extends CI_Model {
     }
 
     public function getKeyword($keyword){
-        $this->db->from($this->table);
+        // $this->db->from($this->table);
         $this->db->like('tahun', $keyword);
-        $this->db->or_like('nama', $keyword);
+        // $this->db->or_like('nama', $keyword);
         return $this->db->get()->result();
     }
 

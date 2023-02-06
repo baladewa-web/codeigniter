@@ -13,27 +13,36 @@ Class Page Extends CI_Controller{
     }
 
     public function list(){
-        
+        // if (!$this->uri->segment(3) == '/') {
+        //     $this->session->unset_userdata('pencarian');
+        // }
+
         //get keyword
-        if($this->input->post('submit')){
-            $data['keyword'] = $this->input->post('keyword'); 
-            $this->session->set_userdata('keyword', $data['keyword']);
-        }
+        // if($this->input->post('submit')){
+        //     $data['keyword'] = $this->input->post('keyword'); 
+        //     $this->session->set_userdata('pencarian', $data['keyword']);
+        //     redirect('list/index/0');
+        // }
 
-        else{
-            $data['keyword'] = $this->session->userdata('keyword');
-        }
-
+        // else{
+        //     $data['keyword'] = $this->session->userdata('pencarian');
+        // }
 
         //config pagination
+        // $this->db->like('tahun', $data['keyword']);
+        // $this->db->or_like('nama', $data['keyword']);
+        // $this->db->from('usulan');
+        // $config['total_rows']   = $this->db->count_all_results('usulan');
+        $data['keyword']        = $this->input->post('keyword');
+       
         $this->db->like('tahun', $data['keyword']);
-        $this->db->or_like('nama', $data['keyword']);
-        // $this->db->form('usulan');
-        $config['total_rows']   = $this->db->count_all_results('usulan');
-        // $config['total_rows']   = $this->page_model->countAll('usulan');
-        $data['total_rows']   =  $config['total_rows'];
+        // $this->db->or_like('nama', $data['keyword']);
+        // $data['keyword']        = $this->page_model->getKeyword($keyword);
+        $config['total_rows']   = $this->page_model->countAll('usulan');
+        // $config['total_rows']   = $this->db->count_all_results('usulan');
+        $data['total_rows']     = $config['total_rows'];
         $config['per_page']     = 7; 
-        $data['start']  = $this->uri->segment(3);
+        $data['start']          = $this->uri->segment(3);
        
         $this->pagination->initialize($config);
 
