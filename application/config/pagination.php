@@ -10,7 +10,7 @@ $config['first_link']       = 'First';
 $config['first_tag_open']   = '<li class="page-item">';
 $config['first_tag_close'] = '</li>';
 
-$config['last_link']       = 'First';
+$config['last_link']       = 'Last';
 $config['last_tag_open']   = '<li class="page-item">';
 $config['last_tag_close'] = '</li>';
 

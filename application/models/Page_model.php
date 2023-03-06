@@ -60,31 +60,6 @@ class Page_model extends CI_Model {
         return $this->db->get($this->table)->result_array();
     }
 
-    public function getAllusulan($limit, $start, $keyword = null){
-        if ($keyword){
-            $this->db->like('tahun', $keyword);
-        }
-        return $this->db->get('usulan', $limit, $start)->result_array();
-    }
-
-    public function countAll(){
-        return $this->db->get('usulan')->num_rows();
-    }
-
-    public function getUsulan($keyword, $start, $limit){
-        if($keyword){
-            $this->db->like('tahun', $keyword);
-        }
-        $result['total_rows'] = $this->db->count_all_results('usulan');
-
-        if($keyword){
-            $this->db->like('tahun', $keyword);
-        }
-        $query = $this->db->get('usulan', $start, $limit);
-        $result['data'] = $query->result_array();
-        return $result;
-    }
-
     public function getById($id){
         return $this->db->get_where($this->table, ["id" => $id])->row();
     }
