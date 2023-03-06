@@ -13,33 +13,65 @@ Class Page Extends CI_Controller{
     }
 
     public function list(){
-        
+
+        $data["usulan"] = $this->page_model->getAll();
+        $this->load->view('page/list', $data);
+        // if (!$this->uri->segment(3) == '/') {
+        //     $this->session->unset_userdata('pencarian');
+        // }
+
         //get keyword
-        if($this->input->post('submit')){
-            $data['keyword'] = $this->input->post('keyword'); 
-            $this->session->set_userdata('keyword', $data['keyword']);
-        }
+        // $data['keyword']        = $this->input->post('keyword');
+        // if($this->input->post('submit')){
+        //     $data['keyword'] = $this->input->post('keyword'); 
+        //     $this->session->set_userdata('pencarian', $data['keyword']);
+        // }
 
-        else{
-            $data['keyword'] = $this->session->userdata('keyword');
-        }
-
+        // else{
+        //     $data['keyword'] = $this->session->userdata('pencarian');
+        // }
 
         //config pagination
-        $this->db->like('tahun', $data['keyword']);
-        $this->db->or_like('nama', $data['keyword']);
-        // $this->db->form('usulan');
-        $config['total_rows']   = $this->db->count_all_results('usulan');
-        // $config['total_rows']   = $this->page_model->countAll('usulan');
-        $data['total_rows']   =  $config['total_rows'];
-        $config['per_page']     = 7; 
-        $data['start']  = $this->uri->segment(3);
+        // $data['keyword']        = $this->input->post('keyword');
+        // $this->db->like('tahun', $data['keyword']);
+        // $this->db->from('usulan');
+        // $config['total_rows']   = $this->db->count_all_results();
+        // $data['total_rows']     = $config['total_rows'];
+        // $config['per_page']     = 7; 
+        // $data['start']          = $this->uri->segment(3);
        
-        $this->pagination->initialize($config);
+        // $this->pagination->initialize($config);
 
-        $data['usulan'] = $this->page_model->getAllusulan($config['per_page'], $data['start'], $data['keyword']);
+        // $data['usulan'] = $this->page_model->getAllusulan($config['per_page'], $data['start'], $data['keyword']);
 
-        $this->load->view('page/list', $data);
+        // $this->load->view('page/list', $data);
+        //config pagination
+        // $config['base_url']     = base_url('page/list/');
+        // $config['total_rows']   = $this->page_model->countAll();
+        // $data['total_rows']     =  $config['total_rows'];
+        // $config['per_page']     = 7; 
+        // $data['start']          = $this->uri->segment(3);
+       
+        // $this->pagination->initialize($config);
+
+        // $data['usulan'] = $this->page_model->getAllusulan($config['per_page'], $data['start']);
+
+        // $this->load->view('page/list', $data);
+
+
+        //pagination with search
+        // $keyword                = $this->input->post('keyword');
+        // // $config['uri_segment']  = 3;
+        // $config['base_url']     = base_url('page/list/');
+        // $config['per_page']     = 5;
+        // $start                  = $this->uri->segment(3);
+        // $result                 = $this->page_model->getUsulan($keyword, $start, $config['per_page']);
+        // $config['total_rows']   = $result['total_rows'];
+       
+        // $this->pagination->initialize($config);
+        
+        // $data['usulan']         = $result['data'];
+        // $this->load->view('page/list', $data);
     }
 
     public function create(){

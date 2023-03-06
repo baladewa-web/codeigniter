@@ -57,31 +57,32 @@ class Page_model extends CI_Model {
 
 
     public function getAll(){
-        return $this->db->get('usulan')->result_array();
+        return $this->db->get($this->table)->result_array();
     }
 
     public function getAllusulan($limit, $start, $keyword = null){
         if ($keyword){
-            // $this->db->from($this->table);
             $this->db->like('tahun', $keyword);
-            $this->db->or_like('nama', $keyword);
         }
-        return $this->db->get('usulan', $limit, $start)->result();
-        // $this->db->limit($limit, $start);
-        // $this->db->from($this->table);
-        // $query = $this->db->get();
-        // return $query->result();
+        return $this->db->get('usulan', $limit, $start)->result_array();
     }
 
     public function countAll(){
         return $this->db->get('usulan')->num_rows();
     }
 
-    public function getKeyword($keyword){
-        $this->db->from($this->table);
-        $this->db->like('tahun', $keyword);
-        $this->db->or_like('nama', $keyword);
-        return $this->db->get()->result();
+    public function getUsulan($keyword, $start, $limit){
+        if($keyword){
+            $this->db->like('tahun', $keyword);
+        }
+        $result['total_rows'] = $this->db->count_all_results('usulan');
+
+        if($keyword){
+            $this->db->like('tahun', $keyword);
+        }
+        $query = $this->db->get('usulan', $start, $limit);
+        $result['data'] = $query->result_array();
+        return $result;
     }
 
     public function getById($id){

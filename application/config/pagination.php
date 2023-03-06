@@ -1,7 +1,7 @@
 <?php 
 
 //config pagination
-$config['base_url']     = site_url('page/list/');
+$config['base_url']     = base_url('page/list/');
 
 $config['full_tag_open']    = '<nav> <ul class="pagination justify-content-center">';
 $config['full_tag_close']   = '</ul></nav>';

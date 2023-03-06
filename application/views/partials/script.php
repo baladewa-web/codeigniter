@@ -24,15 +24,17 @@
 </div>
 
 <!-- build:js assets/vendor/js/core.js -->
-<script src="<?php echo base_url() ?>assets/vendor/libs/jquery/jquery.js"></script>
+<!-- <script defer src="<?php //echo base_url() ?>assets/vendor/libs/jquery/jquery.js"></script> -->
 <script src="<?php echo base_url() ?>assets/vendor/libs/popper/popper.js"></script>
 <script src="<?php echo base_url() ?>assets/vendor/js/bootstrap.js"></script>
 <script src="<?php echo base_url() ?>assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="<?php echo base_url() ?>assets/vendor/js/menu.js"></script>
 
 <!-- DataTables -->
-<script src="<?php echo base_url()?>assets/vendor/libs/jquery/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url()?>assets/vendor/js/dataTables.min.js"></script>
+<script defer src="<?php echo base_url()?>assets/datatables/js/jquery-3.5.1.js"></script>
+<script defer src="<?php echo base_url()?>assets/datatables/js/jquery.dataTables.min.js"></script>
+<script defer src="<?php echo base_url()?>assets/datatables/js/dataTables.bootstrap5.min.js"></script>
+<script defer src="<?php echo base_url()?>assets/datatables/script.js"></script>
 
 <!-- Vendors JS -->
 <script src="<?php echo base_url() ?>assets/vendor/libs/apex-charts/apexcharts.js"></script>
