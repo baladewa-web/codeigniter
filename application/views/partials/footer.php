@@ -7,7 +7,7 @@
                   </script>
                 </div>
                 <div>
-                  <p>@ baladewa</p>
+                  <p>Keramat Selatan</p>
                 </div>
               </div>
             </footer>

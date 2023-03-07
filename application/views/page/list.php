@@ -65,19 +65,20 @@
                       <?php endif;  ?>
 
                       
-                        <div class="table-responsive mt-3 mb-3">
+                        <div class="table-responsive mt-2 mb-3">
                           <table class="table table-striped table-hover" id="example">
                             <thead>
                               <tr class="table-dark text-light">
-                                <th class="text-white">No</th>
-                                <th class="text-white">Usulan</th>
-                                <th class="text-white">tahun</th>
-                                <th class="text-center text-white">RT</th>
-                                <th class="text-center text-white">RW</th>
-                                <th class="text-center text-white">Jumlah</th>
-                                <th class="text-white">Pagu</th>
-                                <th class="text-white">Realisasi</th>
-                                <th class="text-center text-white">Aksi</th>
+                                <th class="text-white w-5">No</th>
+                                <th class="text-white w-25">Usulan</th>
+                                <th class="text-white  w-10">tahun</th>
+                                <th class="text-center text-white w-5">RT</th>
+                                <th class="text-center text-white w-5">RW</th>
+                                <th class="text-center text-white w-5">Jumlah</th>
+                                <th class="text-white w-25">Pagu</th>
+                                <th class="text-white w-25">Realisasi</th>
+                                <th class="text-white w-25">sisa</th>
+                                <th class="text-center text-white w-5">Aksi</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -92,8 +93,9 @@
                                 <td class="text-center"><?php echo $item['rt'] ?></td>
                                 <td class="text-center"><?php echo $item['rw'] ?></td>
                                 <td class="text-center"><?php echo $item['jumlah'] ?></td>
-                                <td><?php echo "Rp. ". number_format($item['pagu'], 0,",","."); ?></td>
+                                <td class="fs-8"><?php echo "Rp. ". number_format($item['pagu'], 0,",","."); ?></td>
                                 <td><?php echo "Rp. ". number_format($item['realisasi'], 0,",","."); ?></td>
+                                <td><?php echo "Rp. ". number_format($item['pagu'] - $item['realisasi'], 0,",","."); ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

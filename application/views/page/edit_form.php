@@ -143,18 +143,6 @@
                             </small>
                           </div>
                         </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="sisa">Sisa</label>
-                          <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                              <span class="input-group-text">Rp</span>
-                              <input type="number" name="sisa" id="Sisa" class="form-control" value="<?php echo $usulan->sisa ?>" placeholder="1.000.000"<?= set_value('sisa'); ?>/>
-                            </div>
-                            <small class="text-danger">
-                              <?php echo form_error('sisa') ?>
-                            </small>
-                          </div>
-                        </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
                             <a href="<?php echo site_url('page/list') ?>" class="btn btn-secondary">Cancel</a>

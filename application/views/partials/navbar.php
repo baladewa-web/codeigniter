@@ -8,8 +8,10 @@
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- tittle bar -->
               <div class="navbar-nav align-items-center">
-                <div class="nav-item d-flex align-items-center">
-                  <div class="fs-4 text-dark">Sistem Informasi</div>
+                <div class="nav-item align-items-center">
+                  <div class="fs-4 text-primary">Capaian Realisasi Kegiatan RKM</div>
+                  <small><div class="text-secondary">Kelurahan Keramat Selatan</div></small>
+                  
                 </div>
               </div>
               <!-- /tittle bar -->
@@ -30,25 +32,10 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block"><?php echo $this->session->userdata("name"); ?></span>
+                            <small class="text-muted"></small>
                           </div>
                         </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
                       </a>
                     </li>
                     <li>

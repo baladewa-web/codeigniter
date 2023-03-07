@@ -47,11 +47,6 @@ class Page_model extends CI_Model {
                 'label' => ' ',
                 'rules' => 'required'
             ],
-            [
-                'field' => 'sisa',
-                'label' => ' ',
-                'rules' => 'required'
-            ],
         ];
     }
 
@@ -73,8 +68,7 @@ class Page_model extends CI_Model {
             "jumlah"    => $this->input->post('jumlah'),
             "satuan"    => $this->input->post('satuan'),
             "pagu"      => $this->input->post('pagu'),
-            "realisasi" => $this->input->post('realisasi'),
-            "sisa"      => $this->input->post('sisa')
+            "realisasi" => $this->input->post('realisasi')
         );
 
         return $this->db->insert($this->table, $data);
@@ -90,8 +84,7 @@ class Page_model extends CI_Model {
             "jumlah"    => $this->input->post('jumlah'),
             "satuan"    => $this->input->post('satuan'),
             "pagu"      => $this->input->post('pagu'),
-            "realisasi" => $this->input->post('realisasi'),
-            "sisa"      => $this->input->post('sisa')
+            "realisasi" => $this->input->post('realisasi')
         );
 
         return $this->db->update($this->table, $data, array('id' => $this->input->post('id')));
